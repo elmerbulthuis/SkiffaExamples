@@ -1,0 +1,85 @@
+openapi: 3.0.2
+
+info:
+  title: TODO API
+  description: |-
+    This API is a backend for the TODO example
+  version: 0.1.0
+
+paths:
+  /todo-items:
+    get:
+      operationId: list-todo-items
+      description: >
+        Lists all TODO items
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
+    
+    post:
+      operationId: Add-todo-item
+      description: >
+        Add a todo-item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items: 
+                  $ref: "#/components/schemas/todo-item"
+
+
+    put:
+      operationId: modify-todo-item    
+      description: >
+        modify existing todo-item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
+
+    delete:
+      operationId: delete-todo-item
+      description: >
+        Delete an existing todo item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
+
+components:
+  schemas:
+    todo-item:
+      type: object
+      required:
+        - id
+        - description
+        - done
+      properties:
+        id:
+          type: integer
+          minimum: 0
+          exclusiveMinimum: true
+        description:
+          type: string
+          minLength: 1
+        done:
+          type: boolean

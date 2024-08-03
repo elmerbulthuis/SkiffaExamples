@@ -9,7 +9,7 @@ const workspaceRoot = path.resolve(dirname, "..");
 
 const options = { shell: true, stdio: "inherit", env: process.env };
 
-const names = ["reverse-api"];
+const names = ["reverse-api", "todo-api"];
 
 for (const name of names) {
   cp.execFileSync(
