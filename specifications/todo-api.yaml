@@ -21,6 +21,49 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/todo-item"
+    
+    post:
+      operationId: Add-todo-item
+      description: >
+        Add a todo-item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items: 
+                  $ref: "#/components/schemas/todo-item"
+
+
+    put:
+      operationId: modify-todo-item    
+      description: >
+        modify existing todo-item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
+
+    delete:
+      operationId: delete-todo-item
+      description: >
+        Delete an existing todo item
+      responses:
+        "200":
+          description: Ok
+          content:
+            "application/json":
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
 
 components:
   schemas:
