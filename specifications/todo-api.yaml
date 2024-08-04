@@ -21,7 +21,7 @@ paths:
                 type: array
                 items:
                   $ref: "#/components/schemas/todo-item"
-    
+
     post:
       operationId: Add-todo-item
       description: >
@@ -33,12 +33,11 @@ paths:
             "application/json":
               schema:
                 type: array
-                items: 
+                items:
                   $ref: "#/components/schemas/todo-item"
 
-
     put:
-      operationId: modify-todo-item    
+      operationId: modify-todo-item
       description: >
         modify existing todo-item
       responses:
