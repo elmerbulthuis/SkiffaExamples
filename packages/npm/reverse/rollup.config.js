@@ -14,7 +14,6 @@ export default defineConfig([
     plugins: [
       nodeResolve({
         browser: true,
-        mainFields: ["browser"],
       }),
     ],
   },
