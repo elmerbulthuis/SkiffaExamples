@@ -12,6 +12,12 @@ export default defineConfig([
     input: path.resolve(projectRoot, "transpiled", "client.js"),
     output: { file: path.resolve("bundled", "client.js"), format: "iife", sourcemap: true },
     context: "window",
-    plugins: [sourcemaps(), nodeResolve()],
+    plugins: [
+      sourcemaps(),
+      nodeResolve({
+        browser: true,
+        mainFields: ["browser"],
+      }),
+    ],
   },
 ]);
