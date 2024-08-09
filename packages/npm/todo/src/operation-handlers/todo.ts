@@ -1,11 +1,18 @@
 import * as api from "todo-api";
 
-import { CommandHandlers } from "../commandHandlers/commandHandlers";
-import CreateTodo from "../commands/createTodo";
+import { CommandHandlers } from "../commandHandlers/commandHandlers.js";
+import CreateTodo from "../commands/createTodo.js";
 
-export const addTodoOperationHandler: api.server.AddTodoItemOperationHandler<{}> = async (todo: string) => {
-    const createTodoCommand = new CreateTodo(todo);
-    const commandHandlers = new CommandHandlers();
+export const addTodoOperationHandler: api.server.AddTodoItemOperationHandler<{}> = async (todo) => {
+  const createTodoCommand = new CreateTodo(todo.description);
+  const commandHandlers = new CommandHandlers();
 
-    await commandHandlers.createTodo(createTodoCommand);
+  await commandHandlers.createTodo(createTodoCommand);
+
+  // this should return the new todo item
+  return {
+    description: todo.description,
+    done: false,
+    id: 1,
+  };
 };
