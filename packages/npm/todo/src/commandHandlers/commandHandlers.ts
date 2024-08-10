@@ -20,5 +20,6 @@ export class CommandHandlers {
     };
 
     this.todos.set(todoId, todo);
+    return todo;
   }
 }

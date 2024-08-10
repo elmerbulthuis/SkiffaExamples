@@ -17,5 +17,8 @@
     "@skiffa/generator": "^0.13.6",
     "cspell": "^8.13.1",
     "prettier": "^3.3.3"
+  },
+  "dependencies": {
+    "todo-api": "^0.1.0"
   }
 }

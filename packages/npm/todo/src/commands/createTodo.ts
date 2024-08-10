@@ -1,6 +1,4 @@
-// create todo command
-
-export default class createTodo {
+export default class CreateTodo {
   todoName: string;
 
   constructor(todoName: string) {

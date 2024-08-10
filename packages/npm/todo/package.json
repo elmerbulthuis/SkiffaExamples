@@ -1,15 +1,18 @@
 {
   "name": "todo",
   "version": "1.0.0",
-  "main": "index.js",
+  "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prepack": "node ./scripts/build.js",
+    "pretest": "tsc"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "todo-api": "^0.1.0"
+    "rollup": "^4.20.0",
+    "todo-api": "^0.1.0",
+    "typescript": "^5.5.4"
   }
 }
