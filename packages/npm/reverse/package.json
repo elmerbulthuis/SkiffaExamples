@@ -3,7 +3,7 @@
   "type": "module",
   "scripts": {
     "prepack": "node ./scripts/build.js",
-    "pretest": "tsc",
+    "pretest": "node ./scripts/build.js",
     "prestart": "node ./scripts/build.js",
     "start": "node transpiled/server.js",
     "build": "node ./scripts/build.js",
