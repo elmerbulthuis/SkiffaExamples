@@ -1,0 +1,22 @@
+{
+  "name": "todo",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "prepack": "node ./scripts/build.js",
+    "pretest": "node ./scripts/build.js",
+    "prestart": "node ./scripts/build.js",
+    "start": "node transpiled/server.js",
+    "build": "node ./scripts/build.js",
+    "test": "node --test ./transpiled/operation-handlers/todo.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "rollup": "^4.20.0",
+    "todo-api": "^0.1.0",
+    "typescript": "^5.5.4"
+  }
+}

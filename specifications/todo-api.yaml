@@ -1,0 +1,122 @@
+openapi: 3.0.2
+
+info:
+  title: TODO API
+  description: |-
+    This API is a backend for the TODO example
+  version: 0.1.0
+
+paths:
+  /todo-items:
+    get:
+      operationId: list-todo-items
+      description: Lists all TODO items
+      responses:
+        "200":
+          description: Ok
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/todo-item"
+
+    post:
+      operationId: add-todo-item
+      description: Add a todo-item
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/todo-item-create"
+      responses:
+        "201":
+          description: Created
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/id"
+
+  /todo-items/{id}/description:
+    put:
+      operationId: set-todo-item-description
+      description: set todo items name
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the todo item
+          schema:
+            type: integer
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/text"
+      responses:
+        "204":
+          description: Description updated
+        "404":
+          description: Todo item not Found
+
+    delete:
+      operationId: delete-todo-item
+      description: Delete an existing todo item
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the todo item
+          schema: { $ref: "#/components/schemas/id" }
+      responses:
+        "204":
+          description: Todo item deleted
+        "404":
+          description: Todo item was not Found
+
+  /todo-items/{id}/done:
+    post:
+      operationId: todo-item-set-done
+      description: >
+        Mark todo item as done
+      parameters:
+        - name: id
+          in: path
+          required: true
+          description: ID of the todo item
+          schema: { $ref: "#/components/schemas/id" }
+      responses:
+        "204":
+          description: Todo item set to done
+        "404":
+          description: Todo item was not Found
+
+components:
+  schemas:
+    id:
+      type: integer
+      minimum: 1
+    text:
+      type: string
+      minLength: 2
+
+    todo-item:
+      type: object
+      required:
+        - id
+        - description
+        - done
+      properties:
+        id: { $ref: "#/components/schemas/id" }
+        description: { $ref: "#/components/schemas/text" }
+        done:
+          type: boolean
+
+    todo-item-create:
+      type: object
+      required:
+        - description
+      properties:
+        description: { $ref: "#/components/schemas/text" }

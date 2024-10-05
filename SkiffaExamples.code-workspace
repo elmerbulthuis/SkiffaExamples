@@ -12,6 +12,10 @@
       "name": "npm/reverse",
       "path": "packages/npm/reverse",
     },
+    {
+      "name": "npm/todo",
+      "path": "packages/npm/todo",
+    },
   ],
   "settings": {
     "window.title": "Skiffa Examples",
@@ -26,6 +30,9 @@
     "npm.packageManager": "npm",
     "[rust]": {
       "editor.defaultFormatter": "rust-lang.rust-analyzer",
+    },
+    "[typescript]": {
+      "editor.defaultFormatter": "vscode.typescript-language-features",
     },
   },
   "extensions": {
