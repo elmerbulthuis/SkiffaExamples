@@ -1,3 +1,5 @@
+import "./appsignal.js";
+
 import * as api from "noop-api";
 import * as shared from "shared";
 import * as operationHandlers from "./operation-handlers.js";

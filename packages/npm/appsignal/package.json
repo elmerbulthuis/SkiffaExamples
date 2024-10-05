@@ -1,6 +1,6 @@
 {
   "private": true,
-  "type": "module",
+  "type": "commonjs",
   "scripts": {
     "prepack": "$npm_node_execpath ./scripts/build.mjs",
     "pretest": "$npm_node_execpath ./scripts/build.mjs",
@@ -10,6 +10,8 @@
     "test": "$npm_node_execpath --test ./transpiled/**/*.test.js"
   },
   "dependencies": {
+    "@appsignal/nodejs": "^3.5.0",
+    "@skiffa/appsignal": "^0.3.3",
     "@types/node": "^18.19.45",
     "msecs": "^1.0.4",
     "noop-api": "^0.1.0",

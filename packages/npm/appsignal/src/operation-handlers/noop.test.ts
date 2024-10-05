@@ -10,5 +10,5 @@ test("noop", async () => {
 
   const baseUrl = new URL(`http://localhost:${listener.port}`);
 
-   await api.client.noop( { baseUrl });
+  await api.client.noop({ baseUrl });
 });
