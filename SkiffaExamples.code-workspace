@@ -20,6 +20,10 @@
       "name": "npm/todo",
       "path": "packages/npm/todo",
     },
+    {
+      "name": "npm/appsignal",
+      "path": "packages/npm/appsignal",
+    },
   ],
   "settings": {
     "window.title": "Skiffa Examples",
