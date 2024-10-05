@@ -1,5 +1,5 @@
+import * as api from "noop-api";
 import path from "path";
-import * as api from "reverse-api";
 import * as shared from "shared";
 import * as operationHandlers from "./operation-handlers.js";
 import { projectRoot } from "./root.js";
