@@ -1,8 +1,6 @@
 import * as api from "noop-api";
-import path from "path";
 import * as shared from "shared";
 import * as operationHandlers from "./operation-handlers.js";
-import { projectRoot } from "./root.js";
 
 main();
 
@@ -13,25 +11,6 @@ async function main() {
 
   // register all operations
   server.registerOperations(operationHandlers);
-
-  // serve some static files
-  server.registerMiddleware(
-    api.lib.createServeMiddleware({
-      "/": {
-        contentType: "text/html",
-        path: path.join(projectRoot, "public", "index.html"),
-      },
-      "/client.js": {
-        contentType: "application/javascript",
-        path: path.join(projectRoot, "bundled", "client.js"),
-      },
-      "/client.js.map": {
-        contentType: "application/json",
-        path: path.join(projectRoot, "bundled", "client.js.map"),
-      },
-      "/favicon.ico": false,
-    }),
-  );
 
   // get port to listen to from the environment or use the default
   const port = Number(process.env.PORT ?? 8080);
