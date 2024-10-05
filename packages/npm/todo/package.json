@@ -3,12 +3,12 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "prepack": "node ./scripts/build.mjs",
-    "pretest": "node ./scripts/build.mjs",
-    "prestart": "node ./scripts/build.mjs",
-    "start": "node transpiled/server.js",
-    "build": "node ./scripts/build.mjs",
-    "test": "node --test ./transpiled/**/*.test.js"
+    "prepack": "$npm_node_execpath ./scripts/build.mjs",
+    "pretest": "$npm_node_execpath ./scripts/build.mjs",
+    "prestart": "$npm_node_execpath ./scripts/build.mjs",
+    "start": "$npm_node_execpath transpiled/server.js",
+    "build": "$npm_node_execpath ./scripts/build.mjs",
+    "test": "$npm_node_execpath --test ./transpiled/**/*.test.js"
   },
   "keywords": [],
   "author": "",
