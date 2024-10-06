@@ -23,7 +23,9 @@
     "test": "$npm_node_execpath --test ./transpiled/**/*.test.js"
   },
   "dependencies": {
-    "@types/node": "^18.19.45"
+    "@types/node": "^18.19.45",
+    "@types/pg": "^8.11.10",
+    "pg": "^8.13.0"
   },
   "devDependencies": {
     "@tsconfig/node18": "^18.2.4",

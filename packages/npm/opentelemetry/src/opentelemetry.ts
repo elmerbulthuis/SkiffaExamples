@@ -5,6 +5,8 @@ import { OTLPMetricExporter } from "@opentelemetry/exporter-metrics-otlp-http";
 import { OTLPTraceExporter } from "@opentelemetry/exporter-trace-otlp-http";
 import { registerInstrumentations } from "@opentelemetry/instrumentation";
 import { NodeSDK, logs, metrics, tracing } from "@opentelemetry/sdk-node";
+import * as skiffaOpentelemetry from "@skiffa/opentelemetry";
+import * as api from "noop-api";
 
 {
   const otlpSpanProcessor = new tracing.SimpleSpanProcessor(new OTLPTraceExporter());
@@ -33,10 +35,10 @@ import { NodeSDK, logs, metrics, tracing } from "@opentelemetry/sdk-node";
     exporter: new OTLPMetricExporter(),
     exportIntervalMillis: 5000,
   });
-  // const consoleMetricReader = new metrics.PeriodicExportingMetricReader({
-  //   exporter: new metrics.ConsoleMetricExporter(),
-  //   exportIntervalMillis: 5000,
-  // });
+  const consoleMetricReader = new metrics.PeriodicExportingMetricReader({
+    exporter: new metrics.ConsoleMetricExporter(),
+    exportIntervalMillis: 5000,
+  });
 
   const meterProvider = new metrics.MeterProvider({
     readers: [
@@ -48,10 +50,12 @@ import { NodeSDK, logs, metrics, tracing } from "@opentelemetry/sdk-node";
   opentelemetry.metrics.setGlobalMeterProvider(meterProvider);
 }
 
-{
-  const instrumentations = getNodeAutoInstrumentations();
-  instrumentations.forEach((instrumentation) => instrumentation.enable());
-  registerInstrumentations({ instrumentations });
-}
+registerInstrumentations({
+  instrumentations: getNodeAutoInstrumentations(),
+});
 
-export const sdk = new NodeSDK();
+skiffaOpentelemetry.instrument(api.lib.defaultServerWrappers);
+
+export const sdk = new NodeSDK({
+  autoDetectResources: true,
+});
