@@ -6,8 +6,7 @@
     "declarationDir": "./typed",
     "sourceMap": true,
     "declaration": true,
-    "composite": true,
-    "module": "CommonJS"
+    "composite": true
   },
   "include": ["src/**/*"],
   "references": [{ "path": "../shared/" }]
