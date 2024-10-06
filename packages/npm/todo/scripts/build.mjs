@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 import cp from "child_process";
 import path from "path";
 import { fileURLToPath } from "url";

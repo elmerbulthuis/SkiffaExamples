@@ -10,8 +10,14 @@
     "test": "$npm_node_execpath --test ./transpiled/**/*.test.js"
   },
   "dependencies": {
-    "@appsignal/nodejs": "^3.5.0",
-    "@skiffa/appsignal": "^0.3.3",
+    "@opentelemetry/api": "^1.9.0",
+    "@opentelemetry/auto-instrumentations-node": "^0.50.0",
+    "@opentelemetry/exporter-logs-otlp-http": "^0.53.0",
+    "@opentelemetry/exporter-metrics-otlp-http": "^0.53.0",
+    "@opentelemetry/exporter-trace-otlp-http": "^0.53.0",
+    "@opentelemetry/instrumentation": "^0.53.0",
+    "@opentelemetry/sdk-node": "^0.53.0",
+    "@skiffa/opentelemetry": "^0.3.3",
     "@types/node": "^18.19.45",
     "msecs": "^1.0.4",
     "noop-api": "^0.1.0",

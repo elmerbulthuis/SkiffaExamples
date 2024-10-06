@@ -21,6 +21,10 @@
       "path": "packages/npm/todo",
     },
     {
+      "name": "npm/opentelemetry",
+      "path": "packages/npm/opentelemetry",
+    },
+    {
       "name": "npm/appsignal",
       "path": "packages/npm/appsignal",
     },
@@ -36,12 +40,6 @@
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "typescript.tsdk": "node_modules/typescript/lib",
     "npm.packageManager": "npm",
-    "[rust]": {
-      "editor.defaultFormatter": "rust-lang.rust-analyzer",
-    },
-    "[typescript]": {
-      "editor.defaultFormatter": "vscode.typescript-language-features",
-    },
   },
   "extensions": {
     "recommendations": [

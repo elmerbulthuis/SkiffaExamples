@@ -3,13 +3,21 @@ words:
   - APPSIGNAL
   - esbenp
   - iife
+  - Millis
   - openapi
+  - opentelemetry
+  - openzipkin
+  - otel
+  - otelcol
+  - OTLP
   - preinstall
   - prestart
   - remle
   - ryanluker
   - skiffa
   - todos
+  - zipkin
+  - zpages
 useGitignore: true
 files:
   - "**"
