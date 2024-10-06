@@ -1,12 +1,11 @@
 import { Appsignal } from "@appsignal/nodejs";
 import * as skiffaAppsignal from "@skiffa/appsignal";
+import * as api from "noop-api";
 
-const appsignalPushApiKey = process.env.APPSIGNAL_PUSH_API_KEY;
+skiffaAppsignal.instrument(api.lib.defaultServerWrappers);
 
 export const appsignal = new Appsignal({
-  active: appsignalPushApiKey != null,
+  active: true,
   environment: process.env.NODE_ENV,
   name: "skiffa-examples/appsignal",
-  pushApiKey: appsignalPushApiKey,
-  additionalInstrumentations: [new skiffaAppsignal.Instrumentation()],
 });
