@@ -12,4 +12,3 @@ const options = { shell: true, stdio: "inherit", env: process.env, cwd: projectR
 cp.execFileSync(process.env.npm_execpath, ["--workspace", "todo-api", "run", "build"], options);
 
 cp.execFileSync("tsc", ["--build"], options);
-
